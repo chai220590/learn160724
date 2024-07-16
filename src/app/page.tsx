@@ -1,113 +1,172 @@
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
+import "./styles.css";
 
-export default function Home() {
+const MyButton = ({ children }: any) => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div
+      style={{
+        cursor: "pointer",
+        backgroundColor: "#ff000099",
+        borderRadius: 10,
+        padding: 10,
+        textAlign: "center",
+        margin: 10,
+        width: 120,
+        color: "white",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+type DienThoaiProps = {
+  name: string;
+};
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+const DienThoai = ({ name }: any) => {
+  return <div>{name}</div>;
+};
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+function page() {
+  return (
+    <div>
+      <DienThoai name="nokia" />
+      <DienThoai name={"apple"} />
+      <MyButton>Click me</MyButton>
+      <h1
+        style={{
+          color: "red",
+          backgroundColor: "#ff000010",
+          fontSize: 20,
+        }}
+      >
+        Components
+      </h1>
+      <h1 className="the-h1">Props</h1>
+      <h1 className="bg-abc">State</h1>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <StudentInfo name="Hải" old="12" />
+      <StudentInfo name="Y" old="14" />
+      <StudentInfo name="Tèo" old="21" />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <div>bong de</div>
+      <BongDen />
+
+      <HinhHoc />
+    </div>
   );
 }
+
+export default page;
+
+const HinhHoc = () => {
+  // state color
+  const [color, setColor] = useState("yellow");
+  let mauSac = "blue";
+
+  const onChangeColor = () => {
+    setColor("green");
+  };
+
+  // viet ham
+  function HamSo1() {}
+
+  //
+  const HamSo2 = () => {};
+
+  // Object
+
+  const hinhVuong = {
+    chieuDai: 10,
+    chieuRong: 20,
+  };
+
+  console.log({ hinhVuong });
+
+  return (
+    <div>
+      <p>Hinh hoc</p>
+
+      <button
+        onClick={() => {
+          mauSac = "red";
+        }}
+      >
+        aaaa
+      </button>
+
+      <HinhTron color={color} />
+      <HinhVuong color={color} onClick={onChangeColor} />
+      <button onClick={onChangeColor}>Doi Mau Xanh La</button>
+    </div>
+  );
+};
+
+const HinhTron = ({ color }: any) => {
+  return (
+    <div
+      style={{
+        width: 50,
+        height: 50,
+        borderRadius: 50,
+        backgroundColor: color,
+      }}
+    ></div>
+  );
+};
+
+const HinhVuong = ({ color, onClick }: any) => {
+  return (
+    <div
+      onClick={onClick}
+      style={{
+        width: 50,
+        height: 50,
+        backgroundColor: color,
+      }}
+    ></div>
+  );
+};
+
+const BongDen = () => {
+  // khai báo một state màu
+  const [color, setColor] = useState("white");
+
+  console.log({ color });
+
+  // xử lý khi nhấn vào mửo đèn
+  const moDen = () => {
+    setColor("yellow");
+  };
+
+  // xử lý tắt đèn
+  const tatDen = () => {
+    setColor("white");
+  };
+
+  return (
+    <div>
+      <div
+        style={{
+          height: 10,
+          width: 200,
+          backgroundColor: color,
+        }}
+      ></div>
+
+      <div onClick={moDen}>Mở</div>
+      <div onClick={tatDen}>Tắt</div>
+    </div>
+  );
+};
+
+const StudentInfo = ({ name, old }: any) => {
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <p>Tên:{name}</p>
+      <p>Tuổi:{old}</p>
+    </div>
+  );
+};
